@@ -157,34 +157,30 @@
     <article id="post-Thymeleaf" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/12/Thymeleaf/">Thymeleaf</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/12/Thymeleaf/" class="archive-article-date">
+  	<time datetime="2019-05-12T11:40:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-12</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: Thymeleaf<br>date: 2019-05-12 19:40:32<br>tags: Spring Boot,Thymeleaf</p>
-<h1 id="Thymeleaf"><a href="#Thymeleaf" class="headerlink" title="Thymeleaf"></a>Thymeleaf</h1><h2 id="1、模版引擎"><a href="#1、模版引擎" class="headerlink" title="1、模版引擎"></a>1、模版引擎</h2><p>刚刚学springboot才知道模版引擎这个词，模版引擎大家学web开发的时候应该都碰到过，就是大家都学过的类似Jsp的东西</p>
+        <h1 id="Thymeleaf"><a href="#Thymeleaf" class="headerlink" title="Thymeleaf"></a>Thymeleaf</h1><h2 id="1、模版引擎"><a href="#1、模版引擎" class="headerlink" title="1、模版引擎"></a>1、模版引擎</h2><p>刚刚学springboot才知道模版引擎这个词，模版引擎大家学web开发的时候应该都碰到过，就是大家都学过的类似Jsp的东西</p>
 <p>目前有的模版引擎有 Jsp、Velocity、Freemarker、Thymeleaf 等（之前除了 Jsp其他的我听都没听过）</p>
 <p>模版引擎很好理解，如图：</p>
-<p><img src="//cwt539807486.github.io/2019/06/15/Thymeleaf/template-engine.png" alt></p>
+<p><img src="//cwt539807486.github.io/2019/05/12/Thymeleaf/template-engine.png" alt></p>
 <p>它就是一个将动态数据显示在静态页面的工具</p>
 <p>而在SpringBoot中大都推荐使用Thymeleaf</p>
-<h2 id="2、引入thymeleaf"><a href="#2、引入thymeleaf" class="headerlink" title="2、引入thymeleaf"></a>2、引入thymeleaf</h2><p>首先我们当然要在pom文件里加入thymeleaf的启动器了</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-thymeleaf<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>springboot会自动配置文件，我们也可以切换thymeleaf的版本，在properites中加入</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">thymeleaf.version</span>&gt;</span>3.0.11.RELEASE<span class="tag">&lt;/<span class="name">thymeleaf.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">thymeleaf-layout-dialect.version</span>&gt;</span>2.2.2<span class="tag">&lt;/<span class="name">thymeleaf-layout-dialect.version</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这里要注意一点就是：layout的支持问题，thymeleaf 3以上的版本只支持 layout 2以上版本，thymeleaf 2只支持 layout 1</p>
-<h2 id="3、Thymeleaf的使用"><a href="#3、Thymeleaf的使用" class="headerlink" title="3、Thymeleaf的使用"></a>3、Thymeleaf的使用</h2><p>在maven包里的springboot-autoconfigure包中找到thymeleaf的文件夹，其中properties中：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.thymeleaf"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThymeleafProperties</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Charset DEFAULT_ENCODING = StandardCharsets.UTF_8;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_PREFIX = <span class="string">"classpath:/templates/"</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_SUFFIX = <span class="string">".html"</span>;</span><br></pre></td></tr></table></figure>
-<p>只要我们把HTML页面放在classpath:/templates/ 文件夹下，thymeleaf就能自动渲染</p>
-<h3 id="1、导入thymeleaf的名称空间"><a href="#1、导入thymeleaf的名称空间" class="headerlink" title="1、导入thymeleaf的名称空间"></a>1、导入thymeleaf的名称空间</h3><p>在HTML文件中加入</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>启用thymeleaf</p>
-<h3 id="2、使用thymeleaf语法"><a href="#2、使用thymeleaf语法" class="headerlink" title="2、使用thymeleaf语法"></a>2、使用thymeleaf语法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--th:text 将div里面的文本内容设置为 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">th:text</span>=<span class="string">"$&#123;hello&#125;"</span>&gt;</span>这是显示欢迎信息<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>### </p>
-<h2 id="4、语法"><a href="#4、语法" class="headerlink" title="4、语法"></a>4、语法</h2><h3 id="1、th：属性"><a href="#1、th：属性" class="headerlink" title="1、th：属性"></a>1、th：属性</h3><p>th：任意html属性，来替换原生属性的值</p>
-<p><img src="//cwt539807486.github.io/2019/06/15/Thymeleaf/2018-02-04_123955.png" alt></p>
-<h3 id="2、表达式"><a href="#2、表达式" class="headerlink" title="2、表达式"></a>2、表达式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">Simple expressions:（表达式语法）</span><br><span class="line">    Variable Expressions: $&#123;...&#125;：获取变量值；OGNL；</span><br><span class="line">    		1）、获取对象的属性、调用方法</span><br><span class="line">    		2）、使用内置的基本对象：</span><br><span class="line">    			#ctx : the context object.</span><br><span class="line">    			#vars: the context variables.</span><br><span class="line">                #locale : the context locale.</span><br><span class="line">                #request : (only in Web Contexts) the HttpServletRequest object.</span><br><span class="line">                #response : (only in Web Contexts) the HttpServletResponse object.</span><br><span class="line">                #session : (only in Web Contexts) the HttpSession object.</span><br><span class="line">                #servletContext : (only in Web Contexts) the ServletContext object.</span><br><span class="line">                </span><br><span class="line">                $&#123;session.foo&#125;</span><br><span class="line">            3）、内置的一些工具对象：</span><br><span class="line">#execInfo : information about the template being processed.</span><br><span class="line">#messages : methods for obtaining externalized messages inside variables expressions, in the same way as they would be obtained using #&#123;…&#125; syntax.</span><br><span class="line">#uris : methods for escaping parts of URLs/URIs</span><br><span class="line">#conversions : methods for executing the configured conversion service (if any).</span><br><span class="line">#dates : methods for java.util.Date objects: formatting, component extraction, etc.</span><br><span class="line">#calendars : analogous to #dates , but for java.util.Calendar objects.</span><br><span class="line">#numbers : methods for formatting numeric objects.</span><br><span class="line">#strings : methods for String objects: contains, startsWith, prepending/appending, etc.</span><br><span class="line">#objects : methods for objects in general.</span><br><span class="line">#bools : methods for boolean evaluation.</span><br><span class="line">#arrays : methods for arrays.</span><br><span class="line">#lists : methods for lists.</span><br><span class="line">#sets : methods for sets.</span><br><span class="line">#maps : methods for maps.</span><br><span class="line">#aggregates : methods for creating aggregates on arrays or collections.</span><br><span class="line">#ids : methods for dealing with id attributes that might be repeated (for example, as a result of an iteration).</span><br><span class="line"></span><br><span class="line">    Selection Variable Expressions: *&#123;...&#125;：选择表达式：和$&#123;&#125;在功能上是一样；</span><br><span class="line">    	补充：配合 th:object=&quot;$&#123;session.user&#125;：</span><br><span class="line">   &lt;div th:object=&quot;$&#123;session.user&#125;&quot;&gt;</span><br><span class="line">    &lt;p&gt;Name: &lt;span th:text=&quot;*&#123;firstName&#125;&quot;&gt;Sebastian&lt;/span&gt;.&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;Surname: &lt;span th:text=&quot;*&#123;lastName&#125;&quot;&gt;Pepper&lt;/span&gt;.&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;Nationality: &lt;span th:text=&quot;*&#123;nationality&#125;&quot;&gt;Saturn&lt;/span&gt;.&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    </span><br><span class="line">    Message Expressions: #&#123;...&#125;：获取国际化内容</span><br><span class="line">    Link URL Expressions: @&#123;...&#125;：定义URL；</span><br><span class="line">    		@&#123;/order/process(execId=$&#123;execId&#125;,execType=&apos;FAST&apos;)&#125;</span><br><span class="line">    Fragment Expressions: ~&#123;...&#125;：片段引用表达式</span><br><span class="line">    		&lt;div th:insert=&quot;~&#123;commons :: main&#125;&quot;&gt;...&lt;/div&gt;</span><br><span class="line">    		</span><br><span class="line">Literals（字面量）</span><br><span class="line">      Text literals: &apos;one text&apos; , &apos;Another one!&apos; ,…</span><br><span class="line">      Number literals: 0 , 34 , 3.0 , 12.3 ,…</span><br><span class="line">      Boolean literals: true , false</span><br><span class="line">      Null literal: null</span><br><span class="line">      Literal tokens: one , sometext , main ,…</span><br><span class="line">Text operations:（文本操作）</span><br><span class="line">    String concatenation: +</span><br><span class="line">    Literal substitutions: |The name is $&#123;name&#125;|</span><br><span class="line">Arithmetic operations:（数学运算）</span><br><span class="line">    Binary operators: + , - , * , / , %</span><br><span class="line">    Minus sign (unary operator): -</span><br><span class="line">Boolean operations:（布尔运算）</span><br><span class="line">    Binary operators: and , or</span><br><span class="line">    Boolean negation (unary operator): ! , not</span><br><span class="line">Comparisons and equality:（比较运算）</span><br><span class="line">    Comparators: &gt; , &lt; , &gt;= , &lt;= ( gt , lt , ge , le )</span><br><span class="line">    Equality operators: == , != ( eq , ne )</span><br><span class="line">Conditional operators:条件运算（三元运算符）</span><br><span class="line">    If-then: (if) ? (then)</span><br><span class="line">    If-then-else: (if) ? (then) : (else)</span><br><span class="line">    Default: (value) ?: (defaultvalue)</span><br><span class="line">Special tokens:</span><br><span class="line">    No-Operation: _</span><br></pre></td></tr></table></figure>
-<p>还有更多的关于Thymeleaf的信息可以看官方PDF文档：</p>
-<p><a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.pdf" target="_blank" rel="noopener">https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.pdf</a></p>
-
+        
       
 
       
@@ -192,11 +188,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot,Thymeleaf</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/15/Thymeleaf/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/12/Thymeleaf/">展开全文 >></a>
         </p>
       
 
@@ -393,6 +400,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot,Thymeleaf</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
