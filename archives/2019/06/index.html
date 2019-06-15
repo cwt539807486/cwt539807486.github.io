@@ -6,25 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://cwt539807486.github.io">
-  <title>Spring Boot的启动 | OkaMyi</title>
+  <title>Archives: 2019/6 | OkaMyi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spring Boot 的启动一、POM文件1、父项目123456789101112131415&amp;lt;parent&amp;gt;   &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;   &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;   &amp;lt;version">
-<meta name="keywords" content="Spring Boot">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Spring Boot的启动">
-<meta property="og:url" content="http://cwt539807486.github.io/2019/05/06/spring-boot1/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="OkaMyi">
+<meta property="og:url" content="http://cwt539807486.github.io/archives/2019/06/index.html">
 <meta property="og:site_name" content="OkaMyi">
-<meta property="og:description" content="Spring Boot 的启动一、POM文件1、父项目123456789101112131415&amp;lt;parent&amp;gt;   &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;   &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;   &amp;lt;version">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://cwt539807486.github.io/2019/05/06/spring-boot1/meat2.png">
-<meta property="og:image" content="http://cwt539807486.github.io/2019/05/06/spring-boot1/news.png">
-<meta property="og:image" content="http://cwt539807486.github.io/2019/05/06/spring-boot1/news2.png">
-<meta property="og:image" content="http://cwt539807486.github.io/2019/05/06/spring-boot1/news3.png">
-<meta property="og:updated_time" content="2019-06-05T07:38:10.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring Boot的启动">
-<meta name="twitter:description" content="Spring Boot 的启动一、POM文件1、父项目123456789101112131415&amp;lt;parent&amp;gt;   &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;   &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;   &amp;lt;version">
-<meta name="twitter:image" content="http://cwt539807486.github.io/2019/05/06/spring-boot1/meat2.png">
+<meta name="twitter:title" content="OkaMyi">
   
     <link rel="alternative" href="/atom.xml" title="OkaMyi" type="application/atom+xml">
   
@@ -162,203 +152,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-spring-boot1" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Spring Boot的启动
-    </h1>
   
-
-        
-        <a href="/2019/05/06/spring-boot1/" class="archive-article-date">
-  	<time datetime="2019-05-06T12:39:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-06</time>
-</a>
-        
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Spring-Boot-的启动"><a href="#Spring-Boot-的启动" class="headerlink" title="Spring Boot 的启动"></a>Spring Boot 的启动</h1><h2 id="一、POM文件"><a href="#一、POM文件" class="headerlink" title="一、POM文件"></a>一、POM文件</h2><h3 id="1、父项目"><a href="#1、父项目" class="headerlink" title="1、父项目"></a>1、父项目</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line">他的父项目：</span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">relativePath</span>&gt;</span>../../spring-boot-dependencies<span class="tag">&lt;/<span class="name">relativePath</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">他是真正管理Spring Boot应用里面所有依赖版本</span><br></pre></td></tr></table></figure>
-<p>这是Spring Boot版本的标识，之后导入的依赖就都不用写版本了，Spring Boot会自动使用与之相同的版本依赖</p>
-<p>如果dependencies中没有声明版本号，那所有依赖就都需要声明版本号了</p>
-<a id="more"></a>
-<h3 id="2、导入的启动器"><a href="#2、导入的启动器" class="headerlink" title="2、导入的启动器"></a>2、导入的启动器</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>spring-boot-starter是一个启动器，他导入了web模块想要正常运行依赖的组件</p>
-<p>这里不只是web的启动器还有很多启动器在下面的spring官方说明文档链接里有说明：</p>
-<p><a href="https://docs.spring.io/spring-boot/docs/2.1.5.RELEASE/reference/htmlsingle/#getting-started-first-application-executable-jar" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.1.5.RELEASE/reference/htmlsingle/#getting-started-first-application-executable-jar</a></p>
-<p>Spring Boot将所有功能场景都抽取了出来，做成了一个个starter，只要在姓名，项目里引入这些starter，相关场景的所有依赖就会导入进来，要使用什么功能就导入此功能的starter，如：spring-boot-starter-web、spring-boot-starter-data-jdbc等</p>
-<h2 id="二、主程序类"><a href="#二、主程序类" class="headerlink" title="二、主程序类"></a>二、主程序类</h2><h3 id="1、启动类："><a href="#1、启动类：" class="headerlink" title="1、启动类："></a>1、启动类：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      <span class="comment">//spring应用启动器</span></span><br><span class="line">      SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>@SpringBootApplication</strong>：Spring Boot应用标注在一个类说明这个类是Spring Boot 的主配置类，Spring Boot就会运行这个类的main方法来启动应用</p>
-<h3 id="2、自动配置功能"><a href="#2、自动配置功能" class="headerlink" title="2、自动配置功能"></a>2、自动配置功能</h3><p>这是@SpringBootApplication的类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@SpringBootConfiguration</span><span class="comment">//表示这是Spring Boot的配置类</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span><span class="comment">//开启自动配置功能</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(excludeFilters = &#123;</span><br><span class="line">      <span class="meta">@Filter</span>(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),</span><br><span class="line">      <span class="meta">@Filter</span>(type = FilterType.CUSTOM,</span><br><span class="line">            classes = AutoConfigurationExcludeFilter.class) &#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SpringBootApplication &#123;</span><br></pre></td></tr></table></figure>
-<p><strong>@EnableAutoConfiguration</strong>：开启自动配置功能   ↓</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@AutoConfigurationPackage</span></span><br><span class="line"><span class="meta">@Import</span>(AutoConfigurationImportSelector.class)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> EnableAutoConfiguration &#123;</span><br></pre></td></tr></table></figure>
-<p>@AutoConfigurationPackage：自动配置包   ↓</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@Import</span>(AutoConfigurationPackages.Registrar.class)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> AutoConfigurationPackage &#123;</span><br></pre></td></tr></table></figure>
-<p>@Import(AutoConfigurationPackages.Registrar.class)：</p>
-<p>给容器中导入一个组件<code>AutoConfigurationPackages.Registrar.class</code></p>
-<p>这会将主配置类（@SpringBootApplication标注的类）所在包下面所有子包里面的所有组件都扫描到Spring容器里</p>
-<p>@Import(AutoConfigurationImportSelector.class)：查询容器中添加了哪些组件，并将这些组件以全类名的方式返回，这些组件会被添加到容器中，然后容器中就会有非常多的自动配置类</p>
-<p>Spring Boot在启动的时候从类路径下的MEAT-INF/spring.factories中获取指定的值，将自动配置类导入到容器中，自动配置类就会生效，帮我们进行自动配置工作</p>
-<p><img src="//cwt539807486.github.io/2019/05/06/spring-boot1/meat2.png" alt></p>
-<h2 id="三、快速启动一个Spring-Boot项目（IDEA）"><a href="#三、快速启动一个Spring-Boot项目（IDEA）" class="headerlink" title="三、快速启动一个Spring Boot项目（IDEA）"></a>三、快速启动一个Spring Boot项目（IDEA）</h2><p>第一步：New一个新项目Spring Initializr，选中自己的jdk版本，next</p>
-<p><img src="//cwt539807486.github.io/2019/05/06/spring-boot1/news.png" alt></p>
-<p>第二步：填写好自己的包名等，next</p>
-<p><img src="//cwt539807486.github.io/2019/05/06/spring-boot1/news2.png" alt></p>
-<p>第三步：选择需要的功能、模块一路next最后finish</p>
-<p><img src="//cwt539807486.github.io/2019/05/06/spring-boot1/news3.png" alt></p>
-<p><strong>此功能需要联网</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
+    
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/06/15/Thymeleaf/" class="archive-article-date">
+  	<time datetime="2019-06-15T06:34:51.980Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
+</a>
+        </div>
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://cwt539807486.github.io/2019/05/06/spring-boot1/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/06/15/Thymeleaf/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
-  
-  
-  
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: '5b749597cdc87a389c88',
-  	clientSecret: 'eec22aafcf30cc53fc10c3141ef28f0633582872',
-  	repo: 'cwt539807486.github.io',
-  	owner: 'cwt539807486',
-  	admin: ['cwt539807486'],
-  	id: 'Mon May 06 2019 20:39:50 GMT+0800',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -381,8 +211,8 @@ gitalk.render('gitalk-container')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
